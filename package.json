@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/connorbodin/UTA-Bootcamp-Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^9.1.4"
+    "inquirer": "^8.2.4"
   }
 }
