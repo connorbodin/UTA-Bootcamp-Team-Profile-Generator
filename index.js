@@ -6,6 +6,8 @@ const Employee = require('./lib/Employee');
 const Intern = require('./lib/Intern');
 const fs = require("fs");
 const { Console } = require('console');
+// const generateTemplate = require("./src/generateTemplate");
+
 
 
 
@@ -164,14 +166,21 @@ const buildTeam = () => {
     ---------------------------- 
              Built team! 
     ----------------------------
-`);
-
+`); 
 console.log(teamMembers);
 
+fs.writeFileSync(/dist/teamprofile.html, generateTemplate(teamMembers));
 
 
 
-}
 
 
-managerPrompt();
+};
+
+
+intit = () => {
+    managerPrompt();
+};
+
+
+intit();
