@@ -2,12 +2,12 @@
 
 const generateManager = function (manager) {
   return `
-          <div class="col-4 mt-4">
+          <div class="col-4 mt-4 p-1">
             <div class="card h-100">
               <div class="card-header">
                 <h3>${manager.name}</h3>
                 <h4>
-                  <i class="fas fa-mug-hot mr-2"></i> Manager
+                  <i class="fas fa-mug-hot mr-2"></i>  Manager
                 </h4>
               </div>
 
@@ -27,13 +27,13 @@ const generateManager = function (manager) {
 
 
 const generateEngineer = function (engineer) {
-  return `<div class="col-4 mt-4">
+  return `<div class="col-4 mt-4 p-1">
 <div class="card h-100">
   <div class="card-header">
     <h3>${engineer.name}</h3>
     <h4>
       <i class="fas fa-glasses mr-2"></i>
-         Engineer
+           Engineer
     </h4>
   </div>
 
@@ -57,7 +57,7 @@ const generateEngineer = function (engineer) {
 const generateIntern = function (intern) {
 
   return`
-<div class="col-4 mt-4">
+<div class="col-4 mt-4 p-1">
 <div class="card h-100">
   <div class="card-header">
     <h3>${intern.name}</h3>
@@ -156,7 +156,7 @@ const generateTemplate = (data) => {
       </header>
       <main>
         <div class="container">
-          <div class="row justify-content-center container-fluid" id="team-cards">
+          <div class="column justify-content-center container-fluid" id="team-cards">
             <!-- cards -->
             ${teamCards}
           </div>
