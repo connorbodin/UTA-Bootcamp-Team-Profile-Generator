@@ -168,7 +168,7 @@ const buildTeam = () => {
 `); 
 console.log(teamMembers);
 
-fs.writeFileSync("./dist/teamprof.html", generateTemplate(teamMembers));
+fs.writeFileSync("./dist/teamprofile.html", generateTemplate(teamMembers));
 
 
 
