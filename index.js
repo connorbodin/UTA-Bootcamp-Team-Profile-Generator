@@ -6,7 +6,7 @@ const Employee = require('./lib/Employee');
 const Intern = require('./lib/Intern');
 const fs = require("fs");
 const { Console } = require('console');
-// const generateTemplate = require("./src/generateTemplate");
+const generateTemplate = require("./src/generateTemplate");
 
 
 
@@ -20,7 +20,7 @@ const managerPrompt = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'managerName',
+            name: 'name',
             message: 'What is the name of the the manager?',
             validate: managerNameInput => {
                 if(managerNameInput) {
@@ -32,7 +32,7 @@ const managerPrompt = () => {
         },
         {
             type: 'input',
-            name: 'managerId',
+            name: 'id',
             message: 'What is the ID number of the manager?',
             validate: managerIdInput => {
                 if(managerIdInput) {
@@ -44,7 +44,7 @@ const managerPrompt = () => {
         },
         {
             type: 'input',
-            name: 'managerEmail',
+            name: 'email',
             message: 'What is the email of the the manager?'
         },
         {
@@ -56,7 +56,7 @@ const managerPrompt = () => {
 
     ]).then(answers => {
         console.log(answers);
-        const manager = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.mangerOffice);
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.mangerOffice);
         teamMembers.push(manager);
         menuPrompt();
     });
@@ -85,11 +85,10 @@ const menuPrompt = () => {
 };
 
 const engineerPrompt = () => {
-    console.log(`"\x1b[1m",
+    console.log('\x1b[32m%s\x1b[0m',`
     ---------------------------- 
         Building an Engineer
     ----------------------------
- 
     `);
 
     return inquirer.prompt([
@@ -123,7 +122,7 @@ const engineerPrompt = () => {
 };
 
 const internPrompt = () => {
-    console.log(`
+    console.log('\x1b[32m%s\x1b[0m',`
     ---------------------------- 
         Building an Intern
     ----------------------------
@@ -162,14 +161,14 @@ const internPrompt = () => {
 
 
 const buildTeam = () => {
-    console.log(`
+    console.log('\x1b[32m%s\x1b[0m',`
     ---------------------------- 
              Built team! 
     ----------------------------
 `); 
 console.log(teamMembers);
 
-fs.writeFileSync(/dist/teamprofile.html, generateTemplate(teamMembers));
+fs.writeFileSync("./dist/teamprof.html", generateTemplate(teamMembers));
 
 
 
