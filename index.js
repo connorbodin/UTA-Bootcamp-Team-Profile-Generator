@@ -109,13 +109,13 @@ const engineerPrompt = () => {
         },
         {
             type: 'input',
-            name: 'github',
+            name: 'githubUsername',
             message: 'What is the github of the engineer?'
         },
 
     ]).then(answers => {
         console.log(answers);
-        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.github);
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.githubUsername);
         teamMembers.push(engineer);
         menuPrompt();
     });
