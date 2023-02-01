@@ -156,7 +156,7 @@ const generateTemplate = (data) => {
       </header>
       <main>
         <div class="container">
-          <div class="column justify-content-center container-fluid" id="team-cards">
+          <div class="row justify-content-center container-fluid" id="team-cards">
             <!-- cards -->
             ${teamCards}
           </div>
